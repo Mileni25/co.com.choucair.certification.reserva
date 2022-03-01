@@ -10,9 +10,11 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import net.serenitybdd.screenplay.waits.WithTimeout;
 import org.openqa.selenium.Keys;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class CheckIn implements Task {
 
@@ -31,17 +33,14 @@ public class CheckIn implements Task {
         actor.attemptsTo(Scroll.to(SUBMIT_BUTTONN),
                 Click.on(BUTTON_COOKIES),
                 Enter.theValue(data.get(0).getStrDestinationCity()).into(INPUT_CITY),
-                WaitUntil.the(found_CITY, isVisible()).forNoMoreThan(120).seconds(),
+                //WaitUntil.the(found_CITY,hasValue("Bogota")).forNoMoreThan(120).seconds(),
+                //WaitUntil.the(found_CITY,hasValue("Bogota")),
+                //WaitUntil.the(found_CITY, isVisible()).forNoMoreThan(120).seconds(),
                 Hit.the(Keys.ARROW_DOWN).into(INPUT_CITY),
                 Hit.the(Keys.ENTER).into(INPUT_CITY),
                 Click.on(INPUT_CHECKIN),
                 Click.on(INPUT_DATE),
-                Click.on(INPUT_CHECKOUT),Click.on(PUSH_CONTINUE));
+                Click.on(INPUT_CHECKOUT),Click.on(PUSH_CONTINUE)
+        );
     }
 }
-//Click.on(BUTTON_COOKIES),
-//SelectFromOptions.byVisibleText(data.get(0).getStrDateIn()).from(INPUT_CHECKIN)
-//Enter.theValue(data.get(0).getStrDestinationCity()).into(INPUT_CITY),
-  //      WaitUntil.the(found_CITY, isVisible()).forNoMoreThan(120).seconds(),
-    //    Hit.the(Keys.ARROW_DOWN).into(INPUT_CITY),
-      //  Hit.the(Keys.ENTER).into(INPUT_CITY),

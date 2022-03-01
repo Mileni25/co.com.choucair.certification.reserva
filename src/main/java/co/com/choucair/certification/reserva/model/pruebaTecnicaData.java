@@ -3,23 +3,14 @@ package co.com.choucair.certification.reserva.model;
 public class pruebaTecnicaData {
 
     private String strDestinationCity;
-    private String strDateIn;
-    private String strDateOut;
+    private String strVerif;
 
-    public String getStrDateIn() {
-        return strDateIn;
+    public String getStrVerif() {
+        return strVerif;
     }
 
-    public void setStrDateIn(String strDateIn) {
-        this.strDateIn = strDateIn;
-    }
-
-    public String getStrDateOut() {
-        return strDateOut;
-    }
-
-    public void setStrDateOut(String strDateOut) {
-        this.strDateOut = strDateOut;
+    public void setStrVerif(String strVerif) {
+        this.strVerif = strVerif;
     }
 
     public String getStrDestinationCity() {
